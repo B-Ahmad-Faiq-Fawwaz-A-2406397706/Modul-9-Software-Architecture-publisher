@@ -15,3 +15,9 @@ URL yang sama pada publisher dan subscriber menunjukkan bahwa keduanya terhubung
 ![](media/Publisher%20Subscriber%20console.png)
 
 Ketika publisher dijalankan dengan cargo run, publisher mengirimkan 5 event bertipe UserCreatedEventMessage ke message broker RabbitMQ melalui antrian user_created. Subscriber yang sedang berjalan di terminal lain kemudian menerima dan memproses kelima event tersebut satu per satu. Hal ini menunjukkan bahwa publisher dan subscriber tidak berkomunikasi secara langsung, melainkan melalui perantara RabbitMQ. Publisher tidak perlu mengetahui keberadaan subscriber, dan begitu pula sebaliknya.
+
+## Monitoring chart based on publisher
+
+![](media/RabbitMQ%20Spikes.png)
+
+Setiap kali publisher dijalankan dengan cargo run, terlihat spike pada grafik Message rates di dashboard RabbitMQ. Spike tersebut muncul karena publisher mengirimkan 5 pesan sekaligus dalam waktu singkat ke antrian user_created. Grafik Publish (warna kuning) naik tajam sesaat lalu kembali ke 0 setelah publisher selesai berjalan. Hal ini menunjukkan bahwa RabbitMQ berhasil menerima dan mencatat aktivitas pengiriman pesan dari publisher secara real-time. Semakin sering publisher dijalankan, semakin banyak spike yang muncul pada grafik tersebut.
