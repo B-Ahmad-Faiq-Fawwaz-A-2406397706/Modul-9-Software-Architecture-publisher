@@ -5,3 +5,7 @@ Dalam satu kali menjalankan publisher, program akan mengirimkan 5 event ke messa
 **b. The URL "amqp://guest:guest@localhost:5672" is the same as in subscriber program, what does it mean?**
 
 URL yang sama pada publisher dan subscriber menunjukkan bahwa keduanya terhubung ke message broker yang sama, yaitu RabbitMQ yang berjalan di `localhost` pada port `5672`. Hal ini penting karena publisher dan subscriber tidak berkomunikasi secara langsung satu sama lain, melainkan keduanya melewati perantara yaitu RabbitMQ. Publisher mengirimkan pesan ke broker tersebut, dan subscriber membaca pesan dari broker yang sama. Dengan menggunakan URL koneksi yang identik, kita memastikan bahwa pesan yang dikirim publisher akan masuk ke antrian yang bisa diakses oleh subscriber. Inilah inti dari arsitektur event-driven, di mana message broker menjadi titik pusat komunikasi antar komponen yang independen.
+
+## Screenshot of running RabbitMQ
+
+![](media/RabbitMQ.png)
