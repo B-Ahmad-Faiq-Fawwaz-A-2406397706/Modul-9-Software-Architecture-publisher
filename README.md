@@ -21,3 +21,13 @@ Ketika publisher dijalankan dengan cargo run, publisher mengirimkan 5 event bert
 ![](media/RabbitMQ%20Spikes.png)
 
 Setiap kali publisher dijalankan dengan cargo run, terlihat spike pada grafik Message rates di dashboard RabbitMQ. Spike tersebut muncul karena publisher mengirimkan 5 pesan sekaligus dalam waktu singkat ke antrian user_created. Grafik Publish (warna kuning) naik tajam sesaat lalu kembali ke 0 setelah publisher selesai berjalan. Hal ini menunjukkan bahwa RabbitMQ berhasil menerima dan mencatat aktivitas pengiriman pesan dari publisher secara real-time. Semakin sering publisher dijalankan, semakin banyak spike yang muncul pada grafik tersebut.
+
+# Bonus
+
+## Sending and processing event
+
+![](media/Bonus%20Publisher%20console.png)
+
+![](media/Bonus%20Subscriber%20console.png)
+
+##
