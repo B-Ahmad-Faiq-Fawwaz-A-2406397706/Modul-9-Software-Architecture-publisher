@@ -9,3 +9,9 @@ URL yang sama pada publisher dan subscriber menunjukkan bahwa keduanya terhubung
 ## Screenshot of running RabbitMQ
 
 ![](media/RabbitMQ.png)
+
+## Sending and processing event
+
+![](media/Publisher%20Subscriber%20console.png)
+
+Ketika publisher dijalankan dengan cargo run, publisher mengirimkan 5 event bertipe UserCreatedEventMessage ke message broker RabbitMQ melalui antrian user_created. Subscriber yang sedang berjalan di terminal lain kemudian menerima dan memproses kelima event tersebut satu per satu. Hal ini menunjukkan bahwa publisher dan subscriber tidak berkomunikasi secara langsung, melainkan melalui perantara RabbitMQ. Publisher tidak perlu mengetahui keberadaan subscriber, dan begitu pula sebaliknya.
