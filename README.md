@@ -30,4 +30,6 @@ Setiap kali publisher dijalankan dengan cargo run, terlihat spike pada grafik Me
 
 ![](media/Bonus%20Subscriber%20console.png)
 
-##
+## Monitoring chart based on publisher
+
+![](media/Bonus%20RabbitMQ%20Spikes.png)
